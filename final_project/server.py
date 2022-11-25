@@ -5,13 +5,13 @@ import machinetranslation
 
 app = Flask("Web Translator")
 
-@app.route("/englishToFrench")
+@app.route("/englishToFrench/<textToTranslate>")
 def englishToFrench():
     textToTranslate = request.args.get('textToTranslate')
     machinetranslation.englishToFrench(textToTranslate)
     return "Translated text to French"
 
-@app.route("/frenchToEnglish")
+@app.route("/frenchToEnglish/<textToTranslate>")
 def frenchToEnglish():
     textToTranslate = request.args.get('textToTranslate')
     machinetranslation.frenchToEnglish(textToTranslate)
